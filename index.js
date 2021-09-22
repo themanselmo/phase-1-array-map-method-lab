@@ -12,5 +12,17 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  const newReturn = tutorials.map(caseElement);
+  return newReturn;
+}
+
+const caseElement = element => {
+  let splitWords = element.split(" ");
+  let casedSentance = "";
+  for(element of splitWords){
+    element = element.charAt(0).toUpperCase() + element.substr(1);
+    casedSentance += element + " "
+  }
+  let removeEndSpace = casedSentance.slice(0, -1);
+  return removeEndSpace;
 }
